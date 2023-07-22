@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+          <div class="form-check form-switch mt-4">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" [(ngModel)]="showHideCheck" (change)="showHide()">
+            <label class="form-check-label" for="flexSwitchCheckChecked" name="showHideCheck">Düşük bakiyeleri göster / gizle</label>
+          </div>
+            <div class="card mt-3">
+                <div class="card-body table-responsive">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Asset Logo</th>
+                            <th scope="col">Asset Kodu</th>
+                            <th scope="col">Available Amount</th>
+                            <th scope="col">Available Amount TRY</th>
+
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let balance of balance.balances">
+                            <td>
+                              <img src="https://static.bitlo.com/cryptologossvg/{{balance.assetCode.toLowerCase()}}.svg" alt="" width="32" height="32">
+                            </td> 
+                            <td>{{balance.assetCode}}</td>
+                            <td>{{balance.availableAmount| number:'1.2-2'}}</td>
+                            <td>{{balance.availableAmountTRYValue| number:'1.2-2'}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

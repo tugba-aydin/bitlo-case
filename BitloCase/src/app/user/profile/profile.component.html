@@ -1,0 +1,55 @@
+<div class="container" *ngIf="isLogin">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card mt-3">
+                <div class="card-body table-responsive">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th>Adı</th>
+                                <td>{{profile.firstName}}</td>
+                            </tr>
+                            <tr>
+                                <th>Soyadı</th>
+                                <td>{{profile.lastName}}</td>
+                            </tr>
+                            <tr>
+                                <th>Doğum Tarihi</th>
+                                <td>{{profile.dateOfBirth|date:' d MMMM y':'tr'}}</td>
+                            </tr>
+                            <tr>
+                                <th>Telefon Numarası</th>
+                                <td>{{profile.phoneNumber | phoneFormat}}</td>
+                            </tr>
+                            <tr>
+                                <th>Kimlik Numarası</th>
+                                <td>{{profile.identityNumber}}</td>
+                            </tr>
+                            <tr>
+                                <th>Güncelleme Tarihi</th>
+                                <td>{{profile.updateDate}}</td>
+                            </tr>
+                            <tr>
+                                <th>Ülke</th>
+                                <td>{{profile.country}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul>
+                        <li>
+                            <a href="/profil/bakiyeler">Bakiyeler</a>
+                        </li>
+                        <li>
+                            <a href="/profil/acik-emirler">Açık Emirler</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="!isLogin">
+    <p>
+        Sadece giriş yapmış kullanıcılar bu alanı görüntüleyebilir
+    </p>
+</div>

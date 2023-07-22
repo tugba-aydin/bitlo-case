@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card mt-3">
+                <div class="card-body table-responsive">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Market Kodu</th>
+                            <th scope="col">Order Side</th>
+                            <th scope="col">Order Date</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">orderAmount</th>
+                            <th scope="col">fillAmount</th>
+                            <th scope="col">fillPercent</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let openOrder of openOrder.openOrders;">
+                            <td>{{openOrder.marketCode}}</td>
+                            <td>{{openOrder.orderSide}}</td>
+                            <td>{{openOrder.orderDate}}</td>
+                            <td>{{openOrder.price | number:'1.2-2'}}</td>
+                            <td>{{openOrder.orderAmount | number:'1.2-2'}}</td>
+                            <td>{{openOrder.fillAmount | number:'1.2-2'}}</td>
+                            <td>%{{(openOrder.fillAmount/openOrder.orderAmount)*100 | number:'1.2-2'}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

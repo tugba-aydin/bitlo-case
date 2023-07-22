@@ -1,0 +1,11 @@
+.smallThanZero {
+    color: red;
+}
+
+.greaterThanZero {
+    color: rgb(79, 219, 79);
+}
+
+.equalToZero {
+    color: black;
+}
