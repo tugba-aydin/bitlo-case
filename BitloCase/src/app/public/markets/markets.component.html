@@ -12,19 +12,19 @@
                     <table class="table" *ngIf="!isNull">
                         <thead>
                           <tr>
-                            <th scope="col">Sıra</th>
-                            <th scope="col">Market Kodu</th>
-                            <th scope="col">Güncel Fiyat</th>
-                            <th scope="col">change24h</th>
-                            <th scope="col">change24hPercent</th>
-                            <th scope="col">highestQuote24h</th>
-                            <th scope="col">lowestQuote24h</th>
+                            <th scope="col">Order</th>
+                            <th scope="col">Market Code</th>
+                            <th scope="col">Current Quote</th>
+                            <th scope="col">Change 24h</th>
+                            <th scope="col">Change 24h Percent</th>
+                            <th scope="col">Highest Quote 24h</th>
+                            <th scope="col">Lowest Quote 24h</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr *ngFor="let market of markets ;let i = index">
                             <th scope="row">{{i+1}}</th>
-                            <td><a (click)="goMarketDetail(market)">{{market.marketCode}}</a></td>
+                            <td><a (click)="goMarketDetail(market)" class="text-underline text-blue">{{market.marketCode}}</a></td>
                             <td>{{market.currentQuote| number:'1.2-2'}}</td>
                             <td>{{market.change24h| number:'1.2-2'}}</td>
                             <td [ngClass]="{'smallThanZero' : market.change24hPercent<0 ,'greaterThanZero' : market.change24hPercent>0,'equalToZero':market.change24hPercent==0}">{{market.change24hPercent| number:'1.2-2'}}</td>

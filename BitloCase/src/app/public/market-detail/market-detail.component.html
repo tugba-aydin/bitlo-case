@@ -4,13 +4,13 @@
             <div class="card mt-4">
                 <div class="card-body">
                     <ul>
-                        <li>{{market.marketCode.replace('-',' / ')}}</li>
-                        <li>{{market.currentQuote| number:'1.2-2'}}</li>
-                        <li>{{market.change24h| number:'1.2-2'}}</li>
-                        <li [ngClass]="{'smallThanZero' : market.change24hPercent<0 ,'greaterThanZero' : market.change24hPercent>0,'equalToZero':market.change24hPercent==0}">{{market.change24hPercent| number:'1.2-2'}}</li>
-                        <li>{{market.highestQuote24h| number:'1.2-2'}}</li>
-                        <li>{{market.lowestQuote24h| number:'1.2-2'}}</li>
-                        <li>{{market.weightedAverage24h| number:'1.2-2'}}</li>
+                        <li> <b>Market Code:</b> {{market.marketCode.replace('-',' / ')}}</li>
+                        <li><b>Current Quote:</b> {{market.currentQuote| number:'1.2-2'}}</li>
+                        <li><b>Change 24h:</b> {{market.change24h| number:'1.2-2'}}</li>
+                        <li [ngClass]="{'smallThanZero' : market.change24hPercent<0 ,'greaterThanZero' : market.change24hPercent>0,'equalToZero':market.change24hPercent==0}"><b>Change 24h Percent:</b> {{market.change24hPercent| number:'1.2-2'}}</li>
+                        <li><b>Highest Quote 24h:</b> {{market.highestQuote24h| number:'1.2-2'}}</li>
+                        <li><b>Lowest Quote 24h:</b> {{market.lowestQuote24h| number:'1.2-2'}}</li>
+                        <li><b>Weighted Average 24h:</b> {{market.weightedAverage24h| number:'1.2-2'}}</li>
                     </ul>
 
                     <img src="https://static.bitlo.com/cryptologossvg/{{market.marketCode.split('-')[0].toLowerCase()}}.svg" alt="" width="60" height="60">
