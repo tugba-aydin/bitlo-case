@@ -48,8 +48,12 @@
         </div>
     </div>
 </div>
-<div *ngIf="!isLogin">
-    <p>
-        Sadece giriş yapmış kullanıcılar bu alanı görüntüleyebilir
-    </p>
+<div class="container" *ngIf="!isLogin">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                Sadece giriş yapmış kullanıcılar bu alanı görüntüleyebilir
+            </div>
+        </div>
+    </div>
 </div>
